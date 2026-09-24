@@ -1,0 +1,102 @@
+:root {
+  --ink: #17202a;
+  --muted: #5c6770;
+  --paper: #f5f2eb;
+  --blue: #175c75;
+  --coral: #e47c5d;
+  --line: #d7d1c6;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: Georgia, 'Times New Roman', serif; }
+header, main, footer { max-width: 1180px; margin: auto; padding-left: 6vw; padding-right: 6vw; }
+header { padding-top: 28px; padding-bottom: 18px; display: flex; justify-content: space-between; gap: 25px; align-items: center; }
+.logo { font-weight: bold; font-size: 1.2rem; letter-spacing: 1px; }
+.logo span { color: var(--coral); }
+nav { display: flex; gap: 18px; flex-wrap: wrap; justify-content: flex-end; }
+nav a { color: var(--ink); text-decoration: none; font: .78rem Arial, sans-serif; text-transform: uppercase; letter-spacing: 1px; }
+nav a:hover, nav a.active { color: var(--coral); }
+main { padding-top: 65px; padding-bottom: 80px; }
+.eyebrow { color: var(--coral); font: 700 .78rem Arial, sans-serif; letter-spacing: 3px; text-transform: uppercase; }
+h1 { font-size: clamp(3rem, 7vw, 6rem); font-weight: normal; line-height: .95; margin: 18px 0 45px; letter-spacing: -2px; }
+h1 em { color: var(--blue); }
+footer { border-top: 1px solid var(--line); padding-top: 22px; padding-bottom: 22px; color: var(--muted); font: .75rem Arial, sans-serif; display: flex; justify-content: space-between; }
+
+/* Float and clear keep images and text arranged without grid positioning. */
+.float-left { float: left; margin: 0 30px 20px 0; }
+.clearfix::after, .gallery::after, .hero::after { content: ''; display: table; clear: both; }
+.hero { min-height: 550px; padding-top: 42px; }
+.hero > div:first-child { float: left; width: 54%; padding-top: 70px; }
+.hero .portrait-wrap { float: right; width: 40%; }
+.intro { color: var(--muted); font: 1.05rem/1.75 Arial, sans-serif; max-width: 560px; }
+.actions { margin-top: 35px; display: flex; gap: 15px; flex-wrap: wrap; }
+.button { display: inline-block; padding: 14px 22px; background: var(--blue); color: white; text-decoration: none; font: 700 .78rem Arial, sans-serif; letter-spacing: 1px; text-transform: uppercase; }
+.button.alt { color: var(--blue); background: transparent; border: 1px solid var(--blue); }
+.portrait-wrap { position: relative; max-width: 430px; }
+.portrait-wrap img { display: block; width: 100%; height: 530px; object-fit: cover; filter: saturate(.75); }
+.portrait-wrap::after { content: 'BUILDING IDEAS THAT MOVE'; position: absolute; right: -34px; bottom: 30px; writing-mode: vertical-rl; background: var(--coral); color: white; padding: 16px 9px; font: 700 .7rem Arial, sans-serif; letter-spacing: 2px; }
+.facts { clear: both; border-top: 1px solid var(--line); padding-top: 25px; display: flex; gap: 25px; }
+.fact { flex: 1; }
+.fact strong { display: block; font-size: 1.7rem; color: var(--blue); }
+.fact span { color: var(--muted); font: .8rem Arial, sans-serif; }
+
+/* The gallery uses floated figures and a clear after the final item. */
+.gallery { margin: 0 -7px; }
+.gallery figure { float: left; width: calc(33.333% - 14px); height: 250px; margin: 0 7px 14px; position: relative; overflow: hidden; background: var(--blue); }
+.gallery figure:first-child { width: calc(58.333% - 14px); height: 514px; }
+.gallery img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s; }
+.gallery figure:hover img { transform: scale(1.05); }
+figcaption { position: absolute; bottom: 0; left: 0; right: 0; padding: 16px; color: white; background: linear-gradient(transparent, rgba(0,0,0,.72)); font: .8rem Arial, sans-serif; letter-spacing: 1px; text-transform: uppercase; }
+
+.hobby-grid { display: flex; border: 1px solid var(--line); }
+.hobby { flex: 1; background: var(--paper); padding: 30px; min-height: 250px; border-right: 1px solid var(--line); }
+.hobby:last-child { border-right: 0; }
+.number { color: var(--coral); font: 700 1rem Arial, sans-serif; }
+.hobby h2 { font-size: 1.8rem; font-weight: normal; margin: 45px 0 12px; }
+.hobby p, .skill-group p { color: var(--muted); font: .92rem/1.7 Arial, sans-serif; margin: 0; }
+
+.skill-layout { display: flex; gap: 70px; }
+.skill-layout > div { flex: 1; }
+.skill-group { border-top: 1px solid var(--line); padding-top: 18px; margin-bottom: 35px; }
+.skill-group h2 { font: 700 .8rem Arial, sans-serif; text-transform: uppercase; letter-spacing: 2px; color: var(--blue); margin: 0 0 20px; }
+.tags { display: flex; gap: 9px; flex-wrap: wrap; }
+.tag { border: 1px solid var(--line); padding: 10px 13px; font: .9rem Arial, sans-serif; background: #fbf9f4; }
+.bar { height: 5px; background: var(--line); margin: 15px 0; }
+.bar i { display: block; height: 100%; background: var(--coral); }
+.width-90 { width: 90%; }
+.width-84 { width: 84%; }
+.width-92 { width: 92%; }
+
+.contact-layout { display: flex; gap: 100px; align-items: end; }
+.contact-layout > section, .contact-layout > aside { flex: 1; }
+.lead { font: 1rem/1.7 Arial, sans-serif; color: var(--muted); max-width: 430px; }
+.contact-list { margin-top: 50px; border-top: 1px solid var(--line); }
+.contact-item { padding: 18px 0; border-bottom: 1px solid var(--line); }
+.contact-item small { display: block; color: var(--coral); font: 700 .7rem Arial, sans-serif; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 6px; }
+.contact-item a, .contact-item span { color: var(--ink); font: 1rem Arial, sans-serif; text-decoration: none; }
+.contact-item a:hover { color: var(--blue); }
+.note { border-left: 5px solid var(--coral); padding: 28px 30px; background: #ebe6db; }
+.note h2 { font-size: 2rem; font-weight: normal; margin: 0 0 15px; }
+.note p { font: .92rem/1.7 Arial, sans-serif; color: var(--muted); margin: 0; }
+.note a { display: inline-block; margin-top: 25px; color: var(--blue); font: 700 .75rem Arial, sans-serif; text-transform: uppercase; letter-spacing: 1px; }
+
+@media (max-width: 760px) {
+  header { align-items: flex-start; flex-direction: column; }
+  nav { justify-content: flex-start; gap: 12px; }
+  main { padding-top: 35px; }
+  .hero { padding-top: 20px; }
+  .hero > div:first-child, .hero .portrait-wrap { float: none; width: 100%; }
+  .hero > div:first-child { padding-top: 0; }
+  .portrait-wrap { margin-top: 40px; width: 88% !important; }
+  .portrait-wrap img { height: 400px; }
+  h1 { font-size: 4.4rem; }
+  .facts, .hobby-grid, .skill-layout, .contact-layout { display: block; }
+  .fact { margin-bottom: 22px; }
+  .hobby { min-height: 200px; border-right: 0; border-bottom: 1px solid var(--line); }
+  .hobby:last-child { border-bottom: 0; }
+  .hobby h2 { margin-top: 30px; }
+  .skill-layout > div { margin-bottom: 0; }
+  .contact-layout { padding-top: 0; }
+  .contact-layout > aside { margin-top: 35px; }
+  footer { display: block; line-height: 1.8; }
+}
